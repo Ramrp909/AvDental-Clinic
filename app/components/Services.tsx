@@ -1,0 +1,58 @@
+import { Smile, Sparkles, Shield, Scissors } from 'lucide-react';
+import ServiceCard from './ServiceCard';
+
+export default function Services() {
+  const services = [
+    {
+      icon: <Smile className="w-6 h-6" />,
+      title: 'General Dentistry',
+      description: 'Comprehensive dental care including checkups, cleanings, and preventive treatments for the whole family.',
+    },
+    {
+      icon: <Sparkles className="w-6 h-6" />,
+      title: 'Cosmetic Dentistry',
+      description: 'Transform your smile with teeth whitening, veneers, and other aesthetic dental procedures.',
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Orthodontics',
+      description: 'Straighten your teeth with traditional braces or clear aligners for a perfect smile.',
+    },
+    {
+      icon: <Scissors className="w-6 h-6" />,
+      title: 'Oral Surgery',
+      description: 'Expert surgical procedures including extractions, implants, and wisdom teeth removal.',
+    },
+    {
+      icon: <Smile className="w-6 h-6" />,
+      title: 'Pediatric Dentistry',
+      description: 'Gentle and caring dental treatment specifically designed for children and teens.',
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Emergency Care',
+      description: 'Urgent dental care when you need it most, available during business hours.',
+    },
+  ];
+
+  return (
+    <section id="services" className="py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            Our Services
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            We provide comprehensive dental care services using advanced technology and techniques.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
