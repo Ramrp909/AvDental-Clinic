@@ -2,8 +2,8 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="bg-gradient-to-br from-accent to-white py-12 md:py-20">
-      <div className="container mx-auto px-4">
+    <section id="home" className="bg-gradient-to-br from-accent to-white pt-4 md:pt-6 pb-14 md:pb-14 ">
+      <div className=" bg-hero-bg container mx-auto px-4 rounded-[28px] md:rounded-[32px] p-6 md:p-10 shadow-xl">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight">

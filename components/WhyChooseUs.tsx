@@ -25,7 +25,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50">
+    <section className="py-05 md:py-08 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -36,7 +36,7 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {features.map((feature, index) => (
             <div
               key={index}

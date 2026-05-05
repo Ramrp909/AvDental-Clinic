@@ -27,7 +27,7 @@ export default function AppointmentForm() {
 
   if (isSubmitted) {
     return (
-      <section id="appointment" className="py-16 md:py-20 bg-gradient-to-br from-accent to-primary-light">
+      <section id="appointment" className="py-10 md:py-16 bg-gradient-to-br from-accent to-primary-light">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
             <CheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
