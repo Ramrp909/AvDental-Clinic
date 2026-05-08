@@ -18,12 +18,37 @@ export default function AppointmentForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log('Form submitted:', data);
-    setIsSubmitted(true);
-    reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
-  };
+  // const onSubmit = (data: FormData) => {
+  //   console.log('Form submitted:', data);
+  //   setIsSubmitted(true);
+  //   reset();
+  //   setTimeout(() => setIsSubmitted(false), 5000);
+  // };
+
+  const onSubmit = async (data: any) => {
+  try {
+    const response = await fetch('/api/appointment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    console.log(response)
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert('Appointment request sent!');
+    } else {
+      alert(result.error || 'Something went wrong');
+    }
+  } catch (error) {
+    console.error(error);
+    alert('Failed to send appointment request');
+  }
+};
 
   if (isSubmitted) {
     return (
