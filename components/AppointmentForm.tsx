@@ -69,11 +69,11 @@ export default function AppointmentForm() {
   }
 
   return (
-    <section id="appointment" className="py-16 md:py-20 bg-gradient-to-br from-accent to-primary-light">
-      <div className="container mx-auto px-4">
+    <section id="appointment" className="py-12 md:py-16 bg-gradient-to-br from-accent to-primary-light">
+      <div className="container mx-auto px-3">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex items-center justify-center gap-2 mb-3">
               <Calendar className="w-8 h-8 text-primary" />
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
                 Book an Appointment
@@ -84,8 +84,8 @@ export default function AppointmentForm() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl shadow-xl p-6 md:p-8 space-y-5">
-            <div className="grid md:grid-cols-2 gap-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl shadow-xl p-4 md:p-6 space-y-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name *
@@ -157,7 +157,7 @@ export default function AppointmentForm() {
               )}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
                   Preferred Date *
@@ -218,7 +218,32 @@ export default function AppointmentForm() {
             >
               Book Appointment
             </button>
+             {/* Trust Signals */}
+          <div className="mt-8 pt-6 border-t text-center space-y-2">
+            <p className="text-sm text-muted-foreground">
+              ✓ We respond within 2 hours • ✓ No obligation • ✓ Free consultation
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Your information is protected by HIPAA privacy standards
+            </p>
+          </div>
+
+
+        {/* Emergency Contact */}
+        <div className="mt-8 p-4 bg-red-50 rounded-lg border border-red-200 text-center">
+          <p className="text-sm font-semibold text-red-900 mb-1">
+            Have a dental emergency?
+          </p>
+          <a
+            href="tel:+1234567890"
+            className="text-lg font-bold text-red-700 hover:text-red-800"
+          >
+            Call Now: (123) 456-7890
+          </a>
+        </div>
           </form>
+
+          
         </div>
       </div>
     </section>

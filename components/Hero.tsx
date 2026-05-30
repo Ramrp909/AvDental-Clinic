@@ -61,7 +61,20 @@ export default function Hero() {
               <p className="text-3xl font-bold text-primary">15+</p>
               <p className="text-gray-600 text-sm">Years of Experience</p>
             </div>
+            {/* Floating Badge */}
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-lg p-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-[#FFE4D6] flex items-center justify-center">
+                  <p className="w-6 h-6 text-[#0066CC]" />
+                </div>
+                <div>
+                  <div className="font-bold text-foreground">Same Day</div>
+                  <div className="text-sm text-muted-foreground">Appointments</div>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div>
       </div>
     </section>

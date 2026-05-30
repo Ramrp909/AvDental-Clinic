@@ -36,12 +36,27 @@ export default function Footer() {
               <li><a href="mailto:info@dentalclinic.com" className="hover:text-white transition-colors">info@dentalclinic.com</a></li>
             </ul>
           </div>
-        </div>
 
-        <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} DentalCare. All rights reserved.</p>
+          
         </div>
       </div>
+
+       <div className="mt-12 pt-8 border-t border-gray-700">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+            <p>© 2026 SmileCare Dental. All rights reserved.</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-[#FFE4D6] transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-[#FFE4D6] transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="hover:text-[#FFE4D6] transition-colors">
+                HIPAA Notice
+              </a>
+            </div>
+          </div>
+        </div>
     </footer>
   );
 }

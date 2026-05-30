@@ -1,4 +1,5 @@
 import DoctorCard from './DoctorCard';
+import DoctorProfile from './DoctorProfile'
 
 export default function About() {
   const doctors = [
@@ -34,10 +35,12 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-          {doctors.map((doctor, index) => (
+
+          <div className="max-w-5xl mx-auto">
+          {/* {doctors.map((doctor, index) => (
             <DoctorCard key={index} {...doctor} />
-          ))}
+          ))} */}
+          <DoctorProfile />
         </div>
       </div>
     </section>
