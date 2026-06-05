@@ -14,9 +14,10 @@ interface FormData {
   promoCode?: string;
 }
 
+
 export default function AppointmentForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+  const [isSubmitted] = useState(false);
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   // const onSubmit = (data: FormData) => {
   //   console.log('Form submitted:', data);
@@ -25,7 +26,7 @@ export default function AppointmentForm() {
   //   setTimeout(() => setIsSubmitted(false), 5000);
   // };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: FormData) => {
   try {
     const response = await fetch('/api/appointment', {
       method: 'POST',

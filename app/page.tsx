@@ -5,7 +5,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
 import AppointmentForm from '../components/AppointmentForm';
 import Contact from '../components/Contact';
-import FAQ from '@/components/FAQ';
+import FAQ from '../components/faq';
 
 export default function Home() {
   return (

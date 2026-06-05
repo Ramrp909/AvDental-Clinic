@@ -1,4 +1,5 @@
-import { CheckCircle2, Shield } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 // import { Card } from "./ui/card";
 // import { ImageWithFallback } from "./figma/ImageWithFallback";
 
@@ -20,7 +21,7 @@ export default function DoctorProfile() {
             <div className="grid md:grid-cols-[280px_1fr] gap-6 md:gap-8 items-center">
             {/* Left: Doctor Image */}
             <div className="relative">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1667133295308-9ef24f71952e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZW50aXN0JTIwZG9jdG9yJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzgwMTIwOTI0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="Dr. Sarah Johnson"
                 className="w-full h-full object-cover rounded-2xl min-h-[280px] md:min-h-[280px_1fr]"

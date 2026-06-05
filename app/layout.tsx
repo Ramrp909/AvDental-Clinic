@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css"
 
 // ✅ IMPORT GLOBAL COMPONENTS
 import TopBar from "../components/TopBar";
@@ -31,6 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
+      
       <body className="min-h-full flex flex-col">
 
         {/* ✅ GLOBAL UI */}

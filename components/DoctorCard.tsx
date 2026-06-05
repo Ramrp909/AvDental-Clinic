@@ -1,4 +1,5 @@
 import { Award } from 'lucide-react';
+import Image from "next/image";
 
 interface DoctorCardProps {
   name: string;
@@ -11,7 +12,7 @@ export default function DoctorCard({ name, specialization, image, experience }: 
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
       <div className="aspect-[3/4] relative bg-gray-100">
-        <img
+        <Image
           src={image}
           alt={name}
           className="w-full h-full object-cover"

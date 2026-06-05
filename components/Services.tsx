@@ -36,10 +36,10 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-10 md:py-16 bg-hero-bg  rounded-[28px] md:rounded-[32px] p-6 md:p-10 shadow-xl">
+    <section id="services" className="py-08 md:py-14 bg-hero-bg  rounded-[28px] md:rounded-[32px] p-6 md:p-08 shadow-xl">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-12 ">
+          <h2 className="text-3xl md:text-l font-bold text-gray-800 mb-4">
             Our Services
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -47,7 +47,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-4">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
