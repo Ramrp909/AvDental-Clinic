@@ -1,6 +1,8 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Image from "next/image";
 
+/* eslint-disable @next/next/no-img-element */
+
 export default function Hero() {
   return (
     <section id="home" className="bg-gradient-to-br from-accent to-white pt-2 md:pt-6 pb-8 md:pb-14 ">
@@ -51,33 +53,33 @@ export default function Hero() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="aspect-[4/3] rounded-2xl overflow-visible shadow-2xl">
               <Image
+              width={200}
+              height={200}
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop"
                 alt="Modern dental clinic interior"
                 className="w-full h-full object-cover"
               />
-            </div>
-
-            <div className='flex flex-col sm:flex-row gap-2 md:gap-3'>
-               <div className="bg-white p-3 md:p-5 rounded-xl shadow-lg">
-              <p className="text-2xl md:text-3xl font-bold text-primary">15+</p>
-              <p className="text-gray-600 text-xs md:text-sm">Years of Experience</p>
-            </div>
-            {/* Floating Badge */}
-            <div className="bg-white p-3 md:p-6 rounded-xl shadow-lg">
-              <div className="flex items-center gap-2 md:gap-3">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFE4D6] flex items-center justify-center flex-shrink-0">
-                  <p className="w-5 h-5 md:w-6 md:h-6 text-[#0066CC]" />
-                </div>
-                <div>
-                  <div className="font-bold text-foreground text-xs md:text-sm">Same Day</div>
-                  <div className="text-xs text-muted-foreground">Appointments</div>
+              
+              {/* Badge Overlays */}
+              <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 bg-white p-3 md:p-5 rounded-xl shadow-lg">
+                <p className="text-2xl md:text-3xl font-bold text-primary">15+</p>
+                <p className="text-gray-600 text-xs md:text-sm">Years of Experience</p>
+              </div>
+              
+              <div className="absolute bottom-2 md:bottom-4 right-2 md:right-4 bg-white p-3 md:p-6 rounded-xl shadow-lg">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFE4D6] flex items-center justify-center flex-shrink-0">
+                    <p className="w-5 h-5 md:w-6 md:h-6 text-[#0066CC]" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-foreground text-xs md:text-sm">Same Day</div>
+                    <div className="text-xs text-muted-foreground">Appointments</div>
+                  </div>
                 </div>
               </div>
             </div>
-            </div>
-           
           </div>
           
         </div>

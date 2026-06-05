@@ -7,6 +7,7 @@ interface DoctorCardProps {
   image: string;
   experience?: string;
 }
+/* eslint-disable @next/next/no-img-element */
 
 export default function DoctorCard({ name, specialization, image, experience }: DoctorCardProps) {
   return (

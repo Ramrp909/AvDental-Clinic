@@ -11,6 +11,7 @@ const credentials = [
   "Advanced Training in Implantology",
   "HIPAA Privacy Compliant",
 ];
+/* eslint-disable @next/next/no-img-element */
 
 export default function DoctorProfile() {
   return (
@@ -22,6 +23,8 @@ export default function DoctorProfile() {
             {/* Left: Doctor Image */}
             <div className="relative">
               <Image
+              width={200}
+              height={200}
                 src="https://images.unsplash.com/photo-1667133295308-9ef24f71952e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZW50aXN0JTIwZG9jdG9yJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzgwMTIwOTI0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="Dr. Sarah Johnson"
                 className="w-full h-full object-cover rounded-2xl min-h-[280px] md:min-h-[280px_1fr]"
