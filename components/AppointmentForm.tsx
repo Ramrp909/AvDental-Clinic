@@ -70,58 +70,58 @@ export default function AppointmentForm() {
   }
 
   return (
-    <section id="appointment" className="py-12 md:py-16 bg-gradient-to-br from-accent to-primary-light">
+    <section id="appointment" className="py-6 md:py-12 bg-gradient-to-br from-accent to-primary-light">
       <div className="container mx-auto px-3">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <Calendar className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <div className="text-center mb-5 md:mb-8">
+            <div className="flex items-center justify-center gap-2 mb-2 md:mb-3">
+              <Calendar className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+              <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
                 Book an Appointment
               </h2>
             </div>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-base">
               Fill out the form below and we will get back to you as soon as possible
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl shadow-xl p-4 md:p-6 space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
+          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl shadow-xl p-3.5 md:p-6 space-y-3 md:space-y-4">
+            <div className="grid md:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                   Full Name *
                 </label>
                 <input
                   type="text"
                   id="name"
                   {...register('name', { required: 'Name is required' })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                   placeholder="John Doe"
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                  <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                   Phone Number *
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   {...register('phone', { required: 'Phone is required' })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                   placeholder="+1 (234) 567-890"
                 />
                 {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+                  <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
                 )}
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                 Email Address *
               </label>
               <input
@@ -134,54 +134,54 @@ export default function AppointmentForm() {
                     message: 'Invalid email address'
                   }
                 })}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                 placeholder="john@example.com"
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
               )}
             </div>
 
             <div>
-              <label htmlFor="problem" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="problem" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                 Describe Your Problem *
               </label>
               <textarea
                 id="problem"
                 {...register('problem', { required: 'Please describe your problem' })}
-                rows={4}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+                rows={3}
+                className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none text-sm"
                 placeholder="Tell us about your dental concern..."
               />
               {errors.problem && (
-                <p className="text-red-500 text-sm mt-1">{errors.problem.message}</p>
+                <p className="text-red-500 text-xs mt-1">{errors.problem.message}</p>
               )}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="date" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                   Preferred Date *
                 </label>
                 <input
                   type="date"
                   id="date"
                   {...register('date', { required: 'Date is required' })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                 />
                 {errors.date && (
-                  <p className="text-red-500 text-sm mt-1">{errors.date.message}</p>
+                  <p className="text-red-500 text-xs mt-1">{errors.date.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="time" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="time" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                   Preferred Time *
                 </label>
                 <select
                   id="time"
                   {...register('time', { required: 'Time is required' })}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                  className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                 >
                   <option value="">Select time</option>
                   <option value="09:00">9:00 AM</option>
@@ -195,33 +195,33 @@ export default function AppointmentForm() {
                   <option value="18:00">6:00 PM</option>
                 </select>
                 {errors.time && (
-                  <p className="text-red-500 text-sm mt-1">{errors.time.message}</p>
+                  <p className="text-red-500 text-xs mt-1">{errors.time.message}</p>
                 )}
               </div>
             </div>
 
             <div>
-              <label htmlFor="promoCode" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="promoCode" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                 Promo Code (Optional)
               </label>
               <input
                 type="text"
                 id="promoCode"
                 {...register('promoCode')}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                 placeholder="Enter promo code if you have one"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-primary text-white px-8 py-3.5 rounded-lg hover:bg-primary/90 transition-colors shadow-md font-semibold text-lg"
+              className="w-full bg-primary text-white px-6 md:px-8 py-2.5 md:py-3.5 rounded-lg hover:bg-primary/90 transition-colors shadow-md font-semibold text-sm md:text-lg"
             >
               Book Appointment
             </button>
-             {/* Trust Signals */}
-          <div className="mt-8 pt-6 border-t text-center space-y-2">
-            <p className="text-sm text-muted-foreground">
+            {/* Trust Signals */}
+          <div className="mt-4 md:mt-6 pt-3 md:pt-6 border-t text-center space-y-1.5 md:space-y-2">
+            <p className="text-xs md:text-sm text-muted-foreground">
               ✓ We respond within 2 hours • ✓ No obligation • ✓ Free consultation
             </p>
             <p className="text-xs text-muted-foreground">
@@ -231,13 +231,13 @@ export default function AppointmentForm() {
 
 
         {/* Emergency Contact */}
-        <div className="mt-8 p-4 bg-red-50 rounded-lg border border-red-200 text-center">
-          <p className="text-sm font-semibold text-red-900 mb-1">
+        <div className="mt-4 md:mt-6 p-3 md:p-4 bg-red-50 rounded-lg border border-red-200 text-center">
+          <p className="text-xs md:text-sm font-semibold text-red-900 mb-1">
             Have a dental emergency?
           </p>
           <a
             href="tel:+1234567890"
-            className="text-lg font-bold text-red-700 hover:text-red-800"
+            className="text-base md:text-lg font-bold text-red-700 hover:text-red-800"
           >
             Call Now: (123) 456-7890
           </a>
