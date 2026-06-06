@@ -16,9 +16,32 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dental Clinic - Professional Dental Care",
-  description:
-    "Expert dental care with experienced professionals. Book your appointment today.",
+  title: {
+  default: "Avinash Dental Care in Gudur",
+  template: "%s | Avinash Dental Care",
+},
+keywords: [
+    "Dental Clinic Gudur",
+    "Dentist in Gudur",
+    "Dental Implants Gudur",
+    "Root Canal Treatment Gudur",
+    "Teeth Whitening Gudur",
+    "Cosmetic Dentistry Gudur",
+    "Avinash Dental Care",
+  ],
+   description:
+    "Avinash Dental Care provides expert dental treatments in Gudur including dental implants, root canal treatment, teeth whitening, cosmetic dentistry, and preventive dental care. Located near Tower Clock Centre, Gudur.",
+    icons: {
+  icon: "/assests/logo-2.png",
+},
+
+ openGraph: {
+    title: "Avinash Dental Care",
+    description:
+      "Professional dental care near Tower Clock Centre, Gudur.",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 export default function RootLayout({

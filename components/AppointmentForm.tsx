@@ -16,8 +16,10 @@ interface FormData {
 
 
 export default function AppointmentForm() {
-  const [isSubmitted] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  
+  const { register, handleSubmit,reset,watch, formState: { errors } } = useForm<FormData>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   // const onSubmit = (data: FormData) => {
   //   console.log('Form submitted:', data);
@@ -26,48 +28,93 @@ export default function AppointmentForm() {
   //   setTimeout(() => setIsSubmitted(false), 5000);
   // };
 
-  const onSubmit = async (data: FormData) => {
+//   const onSubmit = async (data: FormData) => {
+//   try {
+//     const response = await fetch('/api/appointment', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(data),
+//     });
+
+//     console.log(response)
+
+//     const result = await response.json();
+
+//     if (result.success) {
+//       alert('Appointment request sent!');
+//     } else {
+//       alert(result.error || 'Something went wrong');
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     alert('Failed to send appointment request');
+//   }
+// };
+const allTimeSlots: string[] = [
+  "09:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "01:00 PM",
+  "02:00 PM",
+  "03:00 PM",
+  "04:00 PM",
+  "05:00 PM",
+  "06:00 PM",
+  "07:00 PM",
+  "08:00 PM",
+  "09:00 PM"
+];
+
+const selectedDate = watch("date");
+
+const availableSlots = allTimeSlots.filter((slot: string) => {
+  const today = new Date().toISOString().split("T")[0];
+
+  if (selectedDate !== today) {
+    return true;
+  }
+
+  const now = new Date();
+  const [hours, minutes] = slot.split(":").map(Number);
+
+  const slotTime = new Date();
+  slotTime.setHours(hours, minutes, 0, 0);
+
+  return slotTime > now;
+});
+
+const onSubmit = async (data: FormData) => {
   try {
-    const response = await fetch('/api/appointment', {
-      method: 'POST',
+    setIsSubmitting(true);
+
+    const response = await fetch("/api/appointment", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
 
-    console.log(response)
-
     const result = await response.json();
 
     if (result.success) {
-      alert('Appointment request sent!');
+      reset(); // clears form
+      setShowSuccessModal(true);
     } else {
-      alert(result.error || 'Something went wrong');
+      alert(result.error || "Something went wrong");
     }
   } catch (error) {
     console.error(error);
-    alert('Failed to send appointment request');
+    alert("Failed to send appointment request");
+  } finally {
+    setIsSubmitting(false);
   }
 };
 
-  if (isSubmitted) {
-    return (
-      <section id="appointment" className="py-10 md:py-16 bg-gradient-to-br from-accent to-primary-light">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 text-center">
-            <CheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">
-              Appointment Request Received!
-            </h3>
-            <p className="text-gray-600">
-              Thank you for choosing our dental clinic. We will contact you shortly to confirm your appointment.
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  }
+
 
   return (
     <section id="appointment" className="py-6 md:py-12 bg-gradient-to-br from-accent to-primary-light">
@@ -122,13 +169,13 @@ export default function AppointmentForm() {
 
             <div>
               <label htmlFor="email" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
-                Email Address *
+                Email Address
               </label>
               <input
                 type="email"
                 id="email"
                 {...register('email', {
-                  required: 'Email is required',
+                  
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                     message: 'Invalid email address'
@@ -166,6 +213,7 @@ export default function AppointmentForm() {
                 <input
                   type="date"
                   id="date"
+                   min={new Date().toISOString().split("T")[0]}
                   {...register('date', { required: 'Date is required' })}
                   className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                 />
@@ -178,22 +226,16 @@ export default function AppointmentForm() {
                 <label htmlFor="time" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                   Preferred Time *
                 </label>
-                <select
-                  id="time"
-                  {...register('time', { required: 'Time is required' })}
-                  className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
-                >
-                  <option value="">Select time</option>
-                  <option value="09:00">9:00 AM</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="12:00">12:00 PM</option>
-                  <option value="14:00">2:00 PM</option>
-                  <option value="15:00">3:00 PM</option>
-                  <option value="16:00">4:00 PM</option>
-                  <option value="17:00">5:00 PM</option>
-                  <option value="18:00">6:00 PM</option>
-                </select>
+                <select {...register("time", { required: true })}
+                className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm">
+  <option value="">Select Time</option>
+
+  {availableSlots.map((slot: string) => (
+    <option key={slot} value={slot}>
+      {slot}
+    </option>
+  ))}
+</select>
                 {errors.time && (
                   <p className="text-red-500 text-xs mt-1">{errors.time.message}</p>
                 )}
@@ -213,19 +255,27 @@ export default function AppointmentForm() {
               />
             </div>
 
-            <button
+            {/* <button
               type="submit"
               className="w-full bg-primary text-white px-6 md:px-8 py-2.5 md:py-3.5 rounded-lg hover:bg-primary/90 transition-colors shadow-md font-semibold text-sm md:text-lg"
             >
               Book Appointment
-            </button>
+            </button> */}
+
+            <button
+  type="submit"
+  disabled={isSubmitting}
+  className="w-full bg-primary text-white px-6 md:px-8 py-2.5 md:py-3.5 rounded-lg hover:bg-primary/90 transition-colors shadow-md font-semibold text-sm md:text-lg disabled:opacity-60 disabled:cursor-not-allowed"
+>
+  {isSubmitting ? "Sending Request..." : "Book Appointment"}
+</button>
             {/* Trust Signals */}
           <div className="mt-4 md:mt-6 pt-3 md:pt-6 border-t text-center space-y-1.5 md:space-y-2">
             <p className="text-xs md:text-sm text-muted-foreground">
               ✓ We respond within 2 hours • ✓ No obligation • ✓ Free consultation
             </p>
             <p className="text-xs text-muted-foreground">
-              Your information is protected by HIPAA privacy standards
+              Your information is kept secure and used only for appointment scheduling.
             </p>
           </div>
 
@@ -247,6 +297,31 @@ export default function AppointmentForm() {
           
         </div>
       </div>
+      {showSuccessModal && (
+  <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 p-4">
+    <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 text-center">
+      <div className="text-5xl mb-4">✅</div>
+
+      <h3 className="text-2xl font-bold text-gray-900 mb-3">
+        Appointment Request Received
+      </h3>
+
+      <p className="text-gray-600 mb-6">
+        Thank you for contacting Avinash Dental Care.
+        <br />
+        Our team will contact you within 2 working hours to confirm your appointment.
+      </p>
+
+      <button
+        onClick={() => setShowSuccessModal(false)}
+        className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
     </section>
+    
   );
 }

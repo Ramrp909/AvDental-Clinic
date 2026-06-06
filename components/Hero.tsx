@@ -16,10 +16,27 @@ export default function Hero() {
             <div className="space-y-3 md:space-y-4 bg-white p-4 md:p-6 rounded-xl shadow-sm">
               <div className="flex items-start gap-2 md:gap-3">
                 <MapPin className="w-4 h-4 md:w-5 md:h-5 text-primary mt-0.5 md:mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium text-gray-800 text-sm md:text-base">Location</p>
-                  <p className="text-gray-600 text-xs md:text-sm">Near Tower Clock Centre,above tirumula Dairy Parlour,<br/> Gudur, Nellore - 524101</p>
-                </div>
+              <div>
+  <p className="font-medium text-gray-800 text-sm md:text-base">
+    Location
+  </p>
+
+  <p className="text-gray-600 text-xs md:text-sm">
+    Near Tower Clock Centre, above Tirumala Dairy Parlour,
+    <br />
+    Gudur, Nellore - 524101
+  </p>
+
+  <a
+    href="https://maps.google.com/?q=Avinash+Dental+Care+Gudur"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-1 mt-2 text-primary text-xs md:text-sm font-medium hover:underline"
+  >
+    <MapPin className="w-3 h-3 md:w-4 md:h-4" />
+    Get Directions
+  </a>
+</div>
               </div>
 
               <div className="border-t border-gray-100 pt-2.5 md:pt-4">

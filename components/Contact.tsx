@@ -19,9 +19,18 @@ export default function Contact() {
               <div className="text-center px-4">
                 <MapPin className="w-12 h-12 md:w-16 md:h-16 text-primary mx-auto mb-2 md:mb-4" />
                 <p className="text-gray-700 font-medium text-sm md:text-base">Map Integration Placeholder</p>
-                <p className="text-xs md:text-sm text-gray-600 mt-1 md:mt-2">
-                  Replace with Google Maps or Mapbox iframe
-                </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3868.810383120363!2d79.84506207456516!3d14.147242688016451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4ce3000690111b%3A0xa9bc4bc6593d5c4a!2sAvinash%20dental%20care!5e0!3m2!1sen!2sin!4v1780748105139!5m2!1sen!2sin" width="600" height="450" style={{border:0,}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                <div className="mt-4 text-center">
+  <a
+    href="https://maps.google.com/?q=Avinash+Dental+Care+Gudur"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+  >
+    <MapPin className="w-4 h-4" />
+    Get Directions
+  </a>
+</div>
               </div>
             </div>
           </div>
@@ -35,9 +44,9 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-0.5 md:mb-1 text-sm md:text-base">Address</h3>
                   <p className="text-gray-600 text-xs md:text-sm leading-tight md:leading-normal">
-                    123 Dental Street<br />
-                    Healthcare City, HC 12345<br />
-                    United States
+                    Near TowerClock Centre<br />
+                    Gudur Town - Nellore District<br />
+                    Andhra Pradesh - 524101
                   </p>
                 </div>
               </div>
@@ -79,9 +88,9 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-0.5 md:mb-1 text-sm md:text-base">Working Hours</h3>
                   <div className="space-y-0.5 text-xs md:text-sm text-gray-600">
-                    <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
-                    <p>Saturday: 9:00 AM - 5:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>Monday - Friday: 10:00 AM - 09:00 PM</p>
+                    <p>Saturday: 10:00 AM - 09:00 PM</p>
+                    <p>Sunday: Closed || Opened - Subject to appointments</p>
                   </div>
                 </div>
               </div>

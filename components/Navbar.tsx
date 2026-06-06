@@ -4,10 +4,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const image = "../"
 
   const navLinks = [
     { label: 'Home', page: '/', section: 'home' },
@@ -31,37 +35,51 @@ export default function Navbar() {
   return (
     <nav className="bg-hero-bg shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-28">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <span className="text-xl font-semibold text-gray-800">
-              DentalCare
-            </span>
-          </Link>
+         
+        <Link href="/" className="flex items-center gap-4">
+  <Image
+    src="/assests/logo-1.png"
+    alt="Avinash Dental Care Logo"
+    width={100}
+    height={100}
+    priority
+    className="object-contain"
+  />
 
+  {/* <div className="leading-tight">
+    <h1 className="text-lg md:text-2xl font-bold text-gray-800">
+      Avinash Dental Care
+    </h1>
+
+    <p className="text-sm text-primary font-medium">
+      Advanced Dental & Implant Center
+    </p>
+  </div> */}
+  <div className="flex flex-col">
+  <h1 className="text-lg sm:text-xl md:text-3xl font-extrabold text-gray-900 leading-tight">
+    Avinash Dental Care
+  </h1>
+
+  <div className="flex items-center gap-2">
+    <div className="w-8 h-[2px] bg-primary rounded-full" />
+
+    <p className="text-xs sm:text-sm md:text-base font-semibold text-primary">
+      Advanced Dental & Implant Center
+    </p>
+  </div>
+</div>
+
+</Link>
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={getHref(link)}
-                className="text-gray-700 hover:text-primary transition-colors font-medium"
+                className="text-gray-700 hover:text-primary font-extrabold transition-colors"
               >
                 {link.label}
               </Link>

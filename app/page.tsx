@@ -18,6 +18,25 @@ export default function Home() {
       <AppointmentForm />
       <Contact />
       <FAQ />
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      name: "Avinash Dental Care",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Near Tower Clock Centre",
+        addressLocality: "Gudur",
+        addressRegion: "Andhra Pradesh",
+        postalCode: "524101",
+        addressCountry: "IN",
+      },
+      telephone: "+91XXXXXXXXXX",
+    }),
+  }}
+/>
     </>
   );
 }

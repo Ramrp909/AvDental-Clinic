@@ -3,6 +3,9 @@ import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
+
+
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
@@ -16,9 +19,11 @@ export async function POST(req: Request) {
 
     const resend = new Resend(apiKey);
 
+resend.apiKeys.list();
+
     const body = await req.json();
 
-    const { name, phone, email, message } = body;
+    const { name, phone, email, message, problem, date, time } = body;
 
     if (!name || !phone || !email) {
       return NextResponse.json(
@@ -27,17 +32,69 @@ export async function POST(req: Request) {
       );
     }
 
+    const appointmentDate = new Date(date);
+
+if (appointmentDate < new Date(new Date().toDateString())) {
+  return NextResponse.json(
+    { error: "Past dates are not allowed" },
+    { status: 400 }
+  );
+}
+
     const responseData = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "ramprasadpanthagiri90@gmail.com",
       subject: "New Appointment Request",
       html: `
-        <h2>New Appointment Request</h2>
+ <div style="font-family:Arial,sans-serif;max-width:650px;margin:auto">
 
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message || "No message"}</p>
+<h2 style="color:#2563EB;">
+New Appointment Request
+</h2>
+
+<p>
+A patient has submitted a new appointment request from the website.
+</p>
+
+<table style="width:100%;border-collapse:collapse;">
+<tr>
+<td style="padding:10px;font-weight:bold;">Patient Name</td>
+<td style="padding:10px;">${name}</td>
+</tr>
+
+<tr>
+<td style="padding:10px;font-weight:bold;">Phone Number</td>
+<td style="padding:10px;">${phone}</td>
+</tr>
+
+<tr>
+<td style="padding:10px;font-weight:bold;">Email</td>
+<td style="padding:10px;">${email}</td>
+</tr>
+
+<tr>
+<td style="padding:10px;font-weight:bold;">Problem</td>
+<td style="padding:10px;">${problem || "Not specified"}</td>
+</tr>
+
+<tr>
+<td style="padding:10px;font-weight:bold;">Preferred Date</td>
+<td style="padding:10px;">${date}</td>
+</tr>
+
+<tr>
+<td style="padding:10px;font-weight:bold;">Preferred Time</td>
+<td style="padding:10px;">${time}</td>
+</tr>
+</table>
+
+<hr style="margin:20px 0">
+
+<p style="font-size:12px;color:#666;">
+Submitted through Avinash Dental Care website.
+</p>
+
+</div>
       `,
     });
 
