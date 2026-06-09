@@ -1,9 +1,23 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
 /* eslint-disable @next/next/no-img-element */
 
 export default function Hero() {
+  const heroImages = [
+  "/assets/logo-1.png",
+  
+];
+
+const [currentImage, setCurrentImage] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  }, 3500);
+
+  return () => clearInterval(interval);
+}, []);
   return (
     <section id="home" className="bg-gradient-to-br from-accent to-white pt-2 md:pt-6 pb-8 md:pb-14 ">
       <div className=" bg-hero-bg container mx-auto px-4 rounded-[28px] md:rounded-[32px] p-4 md:p-10 shadow-xl">
@@ -70,14 +84,28 @@ export default function Hero() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-visible shadow-2xl">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-              width={200}
-              height={200}
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop"
-                alt="Modern dental clinic interior"
-                className="w-full h-full object-cover"
-              />
+  src={heroImages[currentImage]}
+  alt="Avinash Dental Care"
+  fill
+  priority
+  className="object-cover transition-opacity duration-700"
+/>
+
+<div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+  {heroImages.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => setCurrentImage(index)}
+      className={`w-2.5 h-2.5 rounded-full transition-all ${
+        currentImage === index
+          ? "bg-white w-6"
+          : "bg-white/60"
+      }`}
+    />
+  ))}
+</div>
               
               {/* Badge Overlays */}
               <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 bg-white p-3 md:p-5 rounded-xl shadow-lg">

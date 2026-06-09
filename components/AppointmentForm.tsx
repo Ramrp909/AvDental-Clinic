@@ -20,6 +20,8 @@ export default function AppointmentForm() {
   const { register, handleSubmit,reset,watch, formState: { errors } } = useForm<FormData>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [showSuccessModal, setShowSuccessModal] = useState(false);
+const [promoCode, setPromoCode] = useState("");
+const [promoApplied, setPromoApplied] = useState(false);
 
   // const onSubmit = (data: FormData) => {
   //   console.log('Form submitted:', data);
@@ -85,6 +87,14 @@ const availableSlots = allTimeSlots.filter((slot: string) => {
 
   return slotTime > now;
 });
+
+const applyPromoCode = () => {
+  if (promoCode.trim().toUpperCase() === "AVINDENT") {
+    setPromoApplied(true);
+  } else {
+    alert("Invalid Promo Code");
+  }
+};
 
 const onSubmit = async (data: FormData) => {
   try {
@@ -254,6 +264,39 @@ const onSubmit = async (data: FormData) => {
                 placeholder="Enter promo code if you have one"
               />
             </div>
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
+  <p className="font-semibold text-gray-800 mb-2">
+    🎉 Special Offer
+  </p>
+
+  <p className="text-sm text-gray-600 mb-3">
+    Use code <span className="font-bold text-primary">AVINDENT</span> for a free consultation.
+  </p>
+
+  <div className="flex gap-2">
+    <input
+      type="text"
+      value={promoCode}
+      onChange={(e) => setPromoCode(e.target.value)}
+      placeholder="Enter Promo Code"
+      className="flex-1 border rounded-lg px-3 py-2"
+    />
+
+    <button
+      type="button"
+      onClick={applyPromoCode}
+      className="bg-primary text-white px-4 py-2 rounded-lg"
+    >
+      Apply
+    </button>
+  </div>
+
+  {promoApplied && (
+    <div className="mt-3 bg-green-50 border border-green-200 text-green-700 rounded-lg px-3 py-2 text-sm">
+      ✓ Promo Code Applied Successfully
+    </div>
+  )}
+</div>
 
             {/* <button
               type="submit"

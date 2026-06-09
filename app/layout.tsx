@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import MobileBottomBar from "../components/MobileBottomBar";
+import FloatingPromo from "../components/FloatingPromo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -67,6 +68,7 @@ export default function RootLayout({
 
         {/* ✅ GLOBAL FOOTER + FLOATING */}
         <Footer />
+        <FloatingPromo />
         <FloatingWhatsApp />
         <MobileBottomBar />
 
