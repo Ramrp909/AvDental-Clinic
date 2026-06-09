@@ -1,3 +1,4 @@
+'use client';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Image from "next/image";
 import { useEffect, useState } from "react";
