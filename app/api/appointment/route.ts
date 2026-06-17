@@ -25,7 +25,7 @@ resend.apiKeys.list();
 
     const { name, phone, email, message, problem, date, time } = body;
 
-    if (!name || !phone || !email) {
+    if (!name || !phone || email) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
