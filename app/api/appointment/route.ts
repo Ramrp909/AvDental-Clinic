@@ -43,7 +43,7 @@ if (appointmentDate < new Date(new Date().toDateString())) {
 
     const responseData = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "ramprasadpanthagiri90@gmail.com",
+      to: "dr.avinashdentalcare@gmail.com",
       subject: "New Appointment Request",
       html: `
  <div style="font-family:Arial,sans-serif;max-width:650px;margin:auto">
