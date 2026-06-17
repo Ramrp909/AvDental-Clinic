@@ -9,32 +9,32 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
+      name: 'Kumar Krishna',
       review: 'Exceptional service! The staff was incredibly professional and made me feel comfortable throughout my procedure. Highly recommend!',
       rating: 5,
     },
     {
-      name: 'Michael Chen',
+      name: 'Sardeep kish',
       review: 'Best dental experience I have ever had. The clinic is modern, clean, and the dentists are very skilled. My teeth look amazing!',
       rating: 5,
     },
     {
-      name: 'Emma Williams',
+      name: 'Lasya sri',
       review: 'Very satisfied with the treatment. The team took time to explain everything and answered all my questions patiently.',
       rating: 5,
     },
     {
-      name: 'David Martinez',
+      name: 'Siri',
       review: 'Professional and caring staff. They made my dental visit stress-free. Will definitely be returning for future appointments.',
       rating: 5,
     },
     {
-      name: 'Lisa Anderson',
+      name: 'Teja Reddy',
       review: 'Amazing results! The dentist was gentle and skilled. The entire process was smooth and painless. Thank you!',
       rating: 5,
     },
     {
-      name: 'James Taylor',
+      name: 'Rahul Kavali',
       review: 'Clean facility with state-of-the-art equipment. The staff is friendly and the service is top-notch. Highly recommended!',
       rating: 5,
     },

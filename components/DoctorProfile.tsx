@@ -4,12 +4,17 @@ import Image from "next/image";
 // import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 const credentials = [
-  "Doctor of Dental Surgery (DDS)",
-  "Board Certified in General Dentistry",
-  "Member, American Dental Association",
-  "Certified in Cosmetic Dentistry",
-  "Advanced Training in Implantology",
-  "HIPAA Privacy Compliant",
+  // "Doctor of Dental Surgery (DDS)",
+  // "Board Certified in General Dentistry",
+  // "Member, American Dental Association",
+  // "Certified in Cosmetic Dentistry",
+  // "Advanced Training in Implantology",
+  // "HIPAA Privacy Compliant",
+  "Bachelor of Dental Surgery(BDS)",
+"Fellowship in Cosmetic Dentist and Implantology",
+"Certified BLS practiontioner",
+"Member of Indian Dental Association",
+"Experienced in public Health Dentistry"
 ];
 /* eslint-disable @next/next/no-img-element */
 
@@ -25,8 +30,8 @@ export default function DoctorProfile() {
               <Image
               width={200}
               height={200}
-                src="https://images.unsplash.com/photo-1667133295308-9ef24f71952e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkZW50aXN0JTIwZG9jdG9yJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzgwMTIwOTI0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Dr. Sarah Johnson"
+                src="/assests/doctor.png"
+                alt="Dr. Avinash Kummaragunta"
                 className="w-full h-full object-cover rounded-2xl min-h-[280px] md:min-h-[280px_1fr]"
               />
               
@@ -43,17 +48,17 @@ export default function DoctorProfile() {
             {/* Right: Credentials */}
             <div className="p-4 md:p-6 flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-              Dr. Sarah Johnson
+              Dr. Avinash K
               </h2>
               <p className="text-lg text-[#0066CC] font-semibold mb-6">
                 DDS | Board Certified
               </p>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
-                With over 15 years of experience in general and cosmetic dentistry, 
-                Dr. Johnson is committed to providing personalized, compassionate care 
-                to every patient. Her approach combines the latest dental technology 
-                with a gentle touch to ensure your comfort.
+                With over 5 years of experience in general and cosmetic dentistry, 
+                <b>Dr. Avinash</b> is committed to providing personalized, compassionate care 
+                to every patient. His approach combines the latest dental technology 
+                with a gentle touch to ensure every patient with painless treatment.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">

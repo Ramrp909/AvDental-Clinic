@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const heroImages = [
   "/assets/logo-1.png",
-  
 ];
 
 const [currentImage, setCurrentImage] = useState(0);
@@ -59,11 +58,11 @@ useEffect(() => {
                 <div className="space-y-1.5 md:space-y-2.5">
                   <a href="tel:+1234567890" className="flex items-center gap-2 md:gap-3 text-gray-700 hover:text-primary transition-colors text-xs md:text-sm">
                     <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                    <span>+1 (234) 567-890</span>
+                    <span>+91 8374347409</span>
                   </a>
-                  <a href="mailto:info@dentalclinic.com" className="flex items-center gap-2 md:gap-3 text-gray-700 hover:text-primary transition-colors text-xs md:text-sm">
+                  <a href="mailto:dr.avinashdentalcare@gmail.com" className="flex items-center gap-2 md:gap-3 text-gray-700 hover:text-primary transition-colors text-xs md:text-sm">
                     <Mail className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                    <span>info@dentalclinic.com</span>
+                    <span>dr.avinashdentalcare@gmail.com</span>
                   </a>
                 </div>
               </div>
@@ -74,9 +73,9 @@ useEffect(() => {
                   <div>
                     <p className="font-medium text-gray-800 mb-1 md:mb-2 text-sm">Working Hours</p>
                     <div className="space-y-0.5 text-xs md:text-sm text-gray-600">
-                      <p>Monday - Friday: 9:00 AM - 7:00 PM</p>
-                      <p>Saturday: 9:00 AM - 5:00 PM</p>
-                      <p>Sunday: Closed</p>
+                      <p>Monday - Friday: 9:00 AM - 08:30 PM</p>
+                      <p>Saturday: 9:00 AM - 08:30 PM</p>
+                      <p>Sunday: 04:00 PM - 08:30 PM</p>
                     </div>
                   </div>
                 </div>
@@ -87,9 +86,11 @@ useEffect(() => {
           <div className="relative">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-  src={heroImages[currentImage]}
+  src={"/assests/clinic.jpeg"}
   alt="Avinash Dental Care"
   fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+
   priority
   className="object-cover transition-opacity duration-700"
 />
@@ -110,7 +111,7 @@ useEffect(() => {
               
               {/* Badge Overlays */}
               <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 bg-white p-3 md:p-5 rounded-xl shadow-lg">
-                <p className="text-2xl md:text-3xl font-bold text-primary">15+</p>
+                <p className="text-2xl md:text-3xl font-bold text-primary">5+</p>
                 <p className="text-gray-600 text-xs md:text-sm">Years of Experience</p>
               </div>
               
@@ -118,6 +119,7 @@ useEffect(() => {
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#FFE4D6] flex items-center justify-center flex-shrink-0">
                     <p className="w-5 h-5 md:w-6 md:h-6 text-[#0066CC]" />
+                    <Image src={"/assests/logo.png"} alt="Badge" width={100} height={100}/>
                   </div>
                   <div>
                     <div className="font-bold text-foreground text-xs md:text-sm">Same Day</div>

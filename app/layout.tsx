@@ -33,7 +33,7 @@ keywords: [
    description:
     "Avinash Dental Care provides expert dental treatments in Gudur including dental implants, root canal treatment, teeth whitening, cosmetic dentistry, and preventive dental care. Located near Tower Clock Centre, Gudur.",
     icons: {
-  icon: "/assests/logo-2.png",
+  icon: "/assests/logo.png",
 },
 
  openGraph: {

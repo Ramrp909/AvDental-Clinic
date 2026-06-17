@@ -5,7 +5,7 @@ export default function MobileBottomBar() {
     <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg md:hidden">
       <div className="grid grid-cols-2 gap-2 p-3">
         <a
-          href="tel:+1234567890"
+          href="tel:+918374347409"
           className="flex items-center justify-center gap-2 bg-primary text-white px-4 py-3 rounded-lg hover:bg-primary/90 transition-colors font-medium"
         >
           <Phone className="w-5 h-5" />

@@ -33,27 +33,27 @@ export default function TopBar() {
           {/* Left Side */}
           <div className="flex flex-wrap items-center gap-4 md:gap-6">
             <a
-              href="tel:+1234567890"
+              href="tel:+918374347409"
               className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">+1 (234) 567-890</span>
+              <span className="hidden sm:inline">+91 8374347409</span>
               <span className="sm:hidden">Call</span>
             </a>
 
             <a
-              href="mailto:info@dentalclinic.com"
+              href="mailto:dr.avinashdentalcare@gmail.com"
               className="flex items-center gap-2 text-gray-700 hover:text-primary transition-colors"
             >
               <Mail className="w-4 h-4" />
-              <span className="hidden sm:inline">info@dentalclinic.com</span>
+              <span className="hidden sm:inline">dr.avinashdentalcare@gmail.com</span>
               <span className="sm:hidden">Email</span>
             </a>
           </div>
 
           {/* Right Side */}
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/8374347409"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-secondary text-white px-4 py-1.5 rounded-full hover:bg-secondary/90 transition-colors shadow-sm"

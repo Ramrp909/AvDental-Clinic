@@ -153,7 +153,7 @@ const onSubmit = async (data: FormData) => {
                   id="name"
                   {...register('name', { required: 'Name is required' })}
                   className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
-                  placeholder="John Doe"
+                  placeholder="your name"
                 />
                 {errors.name && (
                   <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
@@ -169,7 +169,7 @@ const onSubmit = async (data: FormData) => {
                   id="phone"
                   {...register('phone', { required: 'Phone is required' })}
                   className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
-                  placeholder="+1 (234) 567-890"
+                  placeholder="+91 12345 67890"
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
@@ -179,7 +179,7 @@ const onSubmit = async (data: FormData) => {
 
             <div>
               <label htmlFor="email" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
-                Email Address
+                Email Address (Optional)
               </label>
               <input
                 type="email"
@@ -252,7 +252,7 @@ const onSubmit = async (data: FormData) => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <label htmlFor="promoCode" className="block text-xs md:text-sm font-medium text-gray-700 mb-1.5 md:mb-2">
                 Promo Code (Optional)
               </label>
@@ -263,7 +263,7 @@ const onSubmit = async (data: FormData) => {
                 className="w-full px-3 md:px-4 py-2 md:py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all text-sm"
                 placeholder="Enter promo code if you have one"
               />
-            </div>
+            </div> */}
             <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
   <p className="font-semibold text-gray-800 mb-2">
     🎉 Special Offer
@@ -332,7 +332,7 @@ const onSubmit = async (data: FormData) => {
             href="tel:+1234567890"
             className="text-base md:text-lg font-bold text-red-700 hover:text-red-800"
           >
-            Call Now: (123) 456-7890
+            Call Now: +91 8374347409
           </a>
         </div>
           </form>

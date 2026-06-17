@@ -11,7 +11,6 @@ import Image from 'next/image';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const image = "../"
 
   const navLinks = [
     { label: 'Home', page: '/', section: 'home' },
@@ -41,7 +40,7 @@ export default function Navbar() {
          
         <Link href="/" className="flex items-center gap-4">
   <Image
-    src="/assests/logo-1.png"
+    src="/assests/logo.png"
     alt="Avinash Dental Care Logo"
     width={100}
     height={100}

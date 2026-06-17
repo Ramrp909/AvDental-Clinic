@@ -40,8 +40,8 @@ export default function Footer() {
               <li>Near TowerClock Centre</li>
               <li>Gudur Town - Nellore District</li>
               <li>Andhrapradesh - 524101</li>
-              <li><a href="tel:+1234567890" className="hover:text-white transition-colors">+1 (234) 567-890</a></li>
-              <li><a href="mailto:info@dentalclinic.com" className="hover:text-white transition-colors">info@dentalclinic.com</a></li>
+              <li><a href="tel:+918374347409" className="hover:text-white transition-colors">+91 8374347409</a></li>
+              <li><a href="mailto:dr.avinashdentalcare@gmail.com" className="hover:text-white transition-colors">dr.avinashdentalcare@gmail.com</a></li>
             </ul>
           </div>
 

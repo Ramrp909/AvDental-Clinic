@@ -59,8 +59,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-0.5 md:mb-1 text-sm md:text-base">Phone</h3>
-                  <a href="tel:+1234567890" className="text-gray-600 hover:text-primary transition-colors text-xs md:text-sm">
-                    +1 (234) 567-890
+                  <a href="tel:+918374347409" className="text-gray-600 hover:text-primary transition-colors text-xs md:text-sm">
+                    +91 8374347409
                   </a>
                 </div>
               </div>
@@ -73,8 +73,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-0.5 md:mb-1 text-sm md:text-base">Email</h3>
-                  <a href="mailto:info@dentalclinic.com" className="text-gray-600 hover:text-primary transition-colors text-xs md:text-sm">
-                    info@dentalclinic.com
+                  <a href="mailto:dr.avinashdentalcare@gmail.com" className="text-gray-600 hover:text-primary transition-colors text-xs md:text-sm">
+                    dr.avinashdentalcare@gmail.com
                   </a>
                 </div>
               </div>
@@ -88,16 +88,16 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-0.5 md:mb-1 text-sm md:text-base">Working Hours</h3>
                   <div className="space-y-0.5 text-xs md:text-sm text-gray-600">
-                    <p>Monday - Friday: 10:00 AM - 09:00 PM</p>
-                    <p>Saturday: 10:00 AM - 09:00 PM</p>
-                    <p>Sunday: Closed || Opened - Subject to appointments</p>
+                    <p>Monday - Friday: 09:00 AM - 08:30 PM</p>
+                    <p>Saturday: 09:00 AM - 08:30 PM</p>
+                    <p>Sunday:04:00 PM - 08:30 PM // Subject to appointments</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/8374347409"
               target="_blank"
               rel="noopener noreferrer"
               className="col-span-2 md:col-span-1 flex items-center justify-center gap-2 md:gap-3 bg-secondary text-white px-4 md:px-6 py-3 md:py-4 rounded-xl hover:bg-secondary/90 transition-colors shadow-md font-semibold text-sm md:text-base"
