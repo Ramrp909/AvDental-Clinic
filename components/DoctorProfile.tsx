@@ -12,7 +12,7 @@ const credentials = [
   // "HIPAA Privacy Compliant",
   "Bachelor of Dental Surgery(BDS)",
 "Fellowship in Cosmetic Dentist and Implantology",
-"Certified BLS practiontioner",
+"Certified BLS practitioner",
 "Member of Indian Dental Association",
 "Experienced in public Health Dentistry"
 ];
@@ -51,7 +51,7 @@ export default function DoctorProfile() {
               Dr. Avinash K
               </h2>
               <p className="text-lg text-[#0066CC] font-semibold mb-6">
-                DDS | Board Certified
+                BDS | Board Certified
               </p>
               
               <p className="text-muted-foreground leading-relaxed mb-6">
