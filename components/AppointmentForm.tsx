@@ -1,8 +1,7 @@
 'use client';
-
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { Calendar, CheckCircle } from 'lucide-react';
+import { useForm,useWatch } from 'react-hook-form';
+import { Calendar } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -17,7 +16,7 @@ interface FormData {
 
 export default function AppointmentForm() {
   
-  const { register, handleSubmit,reset,watch, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit,reset,control, formState: { errors } } = useForm<FormData>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [showSuccessModal, setShowSuccessModal] = useState(false);
 const [promoCode, setPromoCode] = useState("");
@@ -70,7 +69,11 @@ const allTimeSlots: string[] = [
   "09:00 PM"
 ];
 
-const selectedDate = watch("date");
+
+const selectedDate = useWatch({
+  control,
+  name: "date",
+});
 
 const availableSlots = allTimeSlots.filter((slot) => {
   if (selectedDate !== new Date().toISOString().split("T")[0]) {
@@ -80,7 +83,8 @@ const availableSlots = allTimeSlots.filter((slot) => {
   const now = new Date();
 
   const [time, period] = slot.split(" ");
-  let [hours, minutes] = time.split(":").map(Number);
+  let [hours] = time.split(":").map(Number);
+const minutes = Number(time.split(":")[1]);
 
   if (period === "PM" && hours !== 12) {
     hours += 12;

@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     const resend = new Resend(apiKey);
     const body = await req.json();
 
-    const { name, phone, email, message, problem, date, time } = body;
+    const { name, phone, email, problem, date, time } = body;
 
     if (!name || !phone || !date || !time) {
       return NextResponse.json(
