@@ -72,22 +72,29 @@ const allTimeSlots: string[] = [
 
 const selectedDate = watch("date");
 
-const availableSlots = allTimeSlots.filter((slot: string) => {
-  const today = new Date().toISOString().split("T")[0];
-
-  if (selectedDate !== today) {
+const availableSlots = allTimeSlots.filter((slot) => {
+  if (selectedDate !== new Date().toISOString().split("T")[0]) {
     return true;
   }
 
   const now = new Date();
-  const [hours, minutes] = slot.split(":").map(Number);
+
+  const [time, period] = slot.split(" ");
+  let [hours, minutes] = time.split(":").map(Number);
+
+  if (period === "PM" && hours !== 12) {
+    hours += 12;
+  }
+
+  if (period === "AM" && hours === 12) {
+    hours = 0;
+  }
 
   const slotTime = new Date();
   slotTime.setHours(hours, minutes, 0, 0);
 
   return slotTime > now;
 });
-
 const applyPromoCode = () => {
   if (promoCode.trim().toUpperCase() === "AVINDENT") {
     setPromoApplied(true);
@@ -245,6 +252,11 @@ const onSubmit = async (data: FormData) => {
       {slot}
     </option>
   ))}
+  {availableSlots.length === 0 && (
+  <p className="text-sm text-red-500 mt-2">
+    No appointment slots available for today. Please choose another date.
+  </p>
+)}
 </select>
                 {errors.time && (
                   <p className="text-red-500 text-xs mt-1">{errors.time.message}</p>

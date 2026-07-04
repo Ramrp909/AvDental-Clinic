@@ -3,9 +3,6 @@ import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
-
-
-
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
@@ -18,28 +15,34 @@ export async function POST(req: Request) {
     }
 
     const resend = new Resend(apiKey);
-
-resend.apiKeys.list();
-
     const body = await req.json();
 
     const { name, phone, email, message, problem, date, time } = body;
 
-    if (!name || !phone || email) {
+    if (!name || !phone || !date || !time) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
       );
     }
-
     const appointmentDate = new Date(date);
+const today = new Date();
+today.setHours(0, 0, 0, 0);
 
-if (appointmentDate < new Date(new Date().toDateString())) {
+if (isNaN(appointmentDate.getTime())) {
   return NextResponse.json(
-    { error: "Past dates are not allowed" },
+    { error: "Invalid appointment date." },
     { status: 400 }
   );
 }
+
+if (appointmentDate < today) {
+  return NextResponse.json(
+    { error: "Past dates are not allowed." },
+    { status: 400 }
+  );
+}
+
 
     const responseData = await resend.emails.send({
       from: "onboarding@resend.dev",
